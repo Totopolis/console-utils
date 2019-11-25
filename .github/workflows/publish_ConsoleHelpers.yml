@@ -9,12 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Get the version
-      ##run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF#refs/tags/}
       run: echo ::set-env name=RELEASE_VERSION::$(echo $GITHUB_REF | cut -d v -f 2)
-    #- name: Set env
-    #  run: |
-    #    echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF##*/})
-    #    echo "$RELEASE_VERSION"
     - uses: actions/checkout@master
     - name: Add GPR source with credentials to NuGet.config
       shell: pwsh
@@ -33,4 +28,4 @@ jobs:
         GH_SOURCE_NAME: GPR
       run: |
         dotnet nuget push ./NuGetPackages/ConsoleHelpers.$RELEASE_VERSION.nupkg -k ${{ secrets.MYGET_APIKEY }} -s $MYGET_SOURCE
-        dotnet nuget push ./NuGetPackages/ConsoleHelpers.$RELEASE_VERSION.nupkg -s $GH_SOURCE_NAME
+        # dotnet nuget push ./NuGetPackages/ConsoleHelpers.$RELEASE_VERSION.nupkg -s $GH_SOURCE_NAME
