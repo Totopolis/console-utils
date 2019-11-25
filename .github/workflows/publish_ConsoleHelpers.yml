@@ -26,6 +26,4 @@ jobs:
       env:
         MYGET_SOURCE: https://www.myget.org/F/totopolis/api/v3/index.json
         GH_SOURCE_NAME: GPR
-      run: |
-        dotnet nuget push ./NuGetPackages/ConsoleHelpers.$RELEASE_VERSION.nupkg -k ${{ secrets.MYGET_APIKEY }} -s $MYGET_SOURCE
-        # dotnet nuget push ./NuGetPackages/ConsoleHelpers.$RELEASE_VERSION.nupkg -s $GH_SOURCE_NAME
+      run: dotnet nuget push ./NuGetPackages/ConsoleHelpers.$RELEASE_VERSION.nupkg -k ${{ secrets.MYGET_APIKEY }} -s $MYGET_SOURCE

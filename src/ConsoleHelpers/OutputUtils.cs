@@ -18,5 +18,11 @@ namespace ConsoleHelpers
         {
             message.Out(true);
         }
+
+        public static string Request(this string question)
+        {
+            Console.WriteLine(question + ": ");
+            return Console.ReadLine();
+        }
     }
 }
