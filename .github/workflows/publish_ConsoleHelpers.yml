@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Get the version
         id: get_version
-        run: echo ::set-env name=RELEASE_VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
+        run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF#refs/tags/}
     #- name: Set env
     #  run: |
     #    echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF##*/})
