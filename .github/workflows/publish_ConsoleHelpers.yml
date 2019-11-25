@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Set env
-      run: echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:23})
+      run: echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF##*/})
     - uses: actions/checkout@master
     - name: Add GPR source with credentials to NuGet.config
       shell: pwsh
