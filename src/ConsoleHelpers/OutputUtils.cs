@@ -13,5 +13,10 @@ namespace ConsoleHelpers
             if (underLine)
                 Console.WriteLine(string.Empty.PadRight(message.Length, '='));
         }
+
+        public static void OutUnderline(this string message)
+        {
+            message.Out(true);
+        }
     }
 }
