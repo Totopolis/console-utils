@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleHelpers;
+using System;
 
 namespace cutil
 {
@@ -6,7 +7,9 @@ namespace cutil
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            "Hello greed World!".OutGreen();
+            "Hello white World!".Out();
+            "Hello red World!".OutRed();
         }
     }
 }
