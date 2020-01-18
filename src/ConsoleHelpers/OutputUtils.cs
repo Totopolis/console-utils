@@ -28,6 +28,13 @@ namespace ConsoleHelpers
             Console.ForegroundColor = ConsoleColor.White;
         }
 
+        public static void OutYellow(this string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(message);
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
         public static void OutUnderline(this string message)
         {
             message.Out(true);
