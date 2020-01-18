@@ -11,7 +11,7 @@ namespace ConsoleHelpers
     {
         public static dynamic LoadConfig(string fileName)
         {
-            using (var reader = new StreamReader("sample.yaml"))
+            using (var reader = new StreamReader(fileName))
             {
                 var deserializer = new DeserializerBuilder().Build();
                 var yamlObject = deserializer.Deserialize(reader);
