@@ -13,6 +13,7 @@ namespace cutil
             var config = ConfigUtils.LoadConfig("sample.yaml");
             string sval = config.start;
             double dval = config.pi;
+            int ival = config.french_hens;
         }
     }
 }
