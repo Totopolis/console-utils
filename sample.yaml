@@ -1,0 +1,14 @@
+start: hello world
+pi: 3.14
+integer: 666
+collection: [a, b, c, d]
+dev:
+  user: usr1
+  pass: pass1
+list:
+  - first:
+      attr1: val1
+      attr2: val2
+  - second:
+      attr1: val3
+      attr2: val4

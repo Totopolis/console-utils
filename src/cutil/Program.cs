@@ -1,4 +1,6 @@
 ﻿using ConsoleHelpers;
+using System;
+using System.Collections.Generic;
 
 namespace cutil
 {
@@ -10,10 +12,18 @@ namespace cutil
             "Hello white World!".Out();
             "Hello red World!".OutRed();
 
-            var config = ConfigUtils.LoadConfig("sample.yaml");
+            var config = ConfigUtils.LoadConfig("../../../../../sample.yaml");
             string sval = config.start;
             double dval = config.pi;
-            int ival = config.french_hens;
+            int ival = config.integer;
+
+            var xx = config["dev"]["user"];
+            string usr = config.dev.user;
+
+            foreach (dynamic it in config)
+            {
+                Console.WriteLine(it);
+            }
         }
     }
 }
