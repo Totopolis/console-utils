@@ -1,12 +1,19 @@
 ﻿using ConsoleHelpers;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace cutil
 {
     class Program
     {
         static void Main(string[] args)
+        {
+            var data = KeyValueUtils.Load(@"root-folder", true);
+        }
+
+        static void Main2(string[] args)
         {
             "Hello greed World!".OutGreen();
             "Hello white World!".Out();
