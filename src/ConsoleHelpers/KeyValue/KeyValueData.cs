@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace ConsoleHelpers
 {
@@ -113,7 +114,16 @@ namespace ConsoleHelpers
                 string type = data["type"] as string;
                 string fileName = data["file"] as string;
 
-                var content = File.ReadAllText($"{ymlFolder}\\{fileName}");
+                DirectoryInfo di = new DirectoryInfo(ymlFolder);
+                
+                var fi = di.GetFiles()
+                    .Where(x=>x.Name == fileName)
+                    .FirstOrDefault();
+
+                if (fi == null)
+                    continue;
+
+                var content = File.ReadAllText(fi.FullName);
                 keyValues[prefix + "/" + file.Key] = content;
             }
         }

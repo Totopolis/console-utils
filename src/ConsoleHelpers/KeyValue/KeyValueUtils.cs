@@ -64,7 +64,7 @@ namespace ConsoleHelpers
                         if (app.Value == null)
                         {
                             result.Warning(fi, $"Application {app.Key} does not contain environments");
-                            break;
+                            continue;
                         }
 
                         var envs = app.Value.GetParents();
