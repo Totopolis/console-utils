@@ -1,8 +1,5 @@
 ﻿using ConsoleHelpers;
-using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace cutil
 {
@@ -10,7 +7,11 @@ namespace cutil
     {
         static void Main(string[] args)
         {
-            var data = KeyValueUtils.Load(@"root-folder", true);
+            var data = KeyValueUtils.Load(@"root-folder",
+                recursive: true,
+                showProcess: true);
+
+            KeyValueUtils.ImportToEtcd(data);
         }
 
         static void Main2(string[] args)
