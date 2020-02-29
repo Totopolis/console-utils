@@ -14,7 +14,7 @@ jobs:
       uses: actions/checkout@master
     - uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '3.0.100' # SDK Version to use.
+        dotnet-version: '3.1.100'
     - name: Build and pack nuget 
       run: dotnet pack ./src/ConsoleHelpers/ConsoleHelpers.csproj -c Release -o NuGetPackages /p:Version=$RELEASE_VERSION
     - name: Publish to MyGet
