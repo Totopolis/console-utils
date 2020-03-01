@@ -1,4 +1,4 @@
-﻿namespace ConsoleHelpers
+﻿namespace KeyValueHelpers
 {
     public class KeyValueUser
     {
