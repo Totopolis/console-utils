@@ -1,4 +1,5 @@
-﻿using dotnet_etcd;
+﻿using ConsoleHelpers;
+using dotnet_etcd;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.IO;
